@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Gestionnaire de mot de passe</title>
+    <script src="https://cdn.tailwindcss.com" ></script>
+    
+</head>
+<body class="bg-blue-900 items-center justify-center flex h-[100vh]">
+    
+    <form action="" class="bg-gray-50 w-[600px] p-10 rounded-xl">
+        <h1 class="text-center font-semibold text-2xl mb-5">Generateur de mots de passe</h1>
+
+        <div class="w-full font-medium text-sm">
+            <p >Site Web</p>
+            <input class="border boder-gray-500 pl-4 py-2 w-full rounded" type="text" placeholder="ex:wwww.gmail.com">
+        </div>
+
+        <div class="font-medium my-5 ">
+            <h6>Longueur du mot de passe: </h6>
+            <input class="w-full" type="range" min="4" step="1" max="32" value="4" name="" id="range">
+            <p class="text-sm"><span id="range_value"></span> caracteres</p>
+        </div>
+
+        <div class="font-medium text-sm space-y-3">
+            <h5>Options:</h5>
+            <div class="grid grid-cols-3 gap-2">
+                <div>
+                    <input type="checkbox" name="" id="maj">
+                    <label for="">Majuscules(A-Z)</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="min">
+                    <label for="">Minuscules(a-z)</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="num">
+                    <label for="">Chiffres(0-9)</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="sym">
+                    <label for="">Symboles(!@#$%)</label>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" id="generate" class="bg-blue-700 px-6 text-white my-3 rounded py-2" >Generer un mot de passe </button>
+
+        <hr class="border-t-4 border-blue-500 my-4" />
+
+        <div class="">
+            <p class="text-blue-700 font-medium text-sm">Force: <span id="strength_text">Tres fort </span> (<span id="pwd_strength">0</span>/100)</p>
+        
+            <p class="text-center font-semibold m-3 cursor-pointer" id="result"></p>
+            
+            <small id="copy-message"  class=" flex hidden text-green-400 bg-gray-100 rounded px-4 py-2 justify-center">Mot de passe copié !</small>
+        
+        
+        </div>
+
+
+
+
+    <div class="mt-6 bg-gray-100 rounded-xl p-6 space-y-3">
+        <h1 class="font-semibold">Mot de passe sauvegardes</h1>
+        <div class="flex justify-between w-full mb-4">
+                <div class="bg-white shadow w-[30%] text-center rounded-xl p-3">
+                    <span id="total_count" class="font-semibold text-xl text-blue-600">0</span>
+                    <h4 class="text-sm text-gray-500">Total</h4>
+                </div>
+                <div class="bg-white shadow text-center rounded-xl p-3 shadow w-[30%]">
+                    <span id="strong_count" class="font-semibold text-blue-600 text-xl">0</span>
+                    <h4 class="text-sm text-gray-500">Forts</h4>
+                </div>
+                <div class="bg-white shadow text-center rounded-xl p-3 shadow w-[30%]">
+                    <span id="avg_length" class="font-semibold text-xl text-blue-600">0</span>
+                    <h4 class="text-sm text-gray-500">Longueur moy.</h4>
+                </div>
+        </div>
+
+        <div id="saved_passwords" class="space-y-3"></div>
+    </div>
+
+
+
+    </form>
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
