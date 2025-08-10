@@ -159,12 +159,13 @@ generate.addEventListener('click', (e)=>{
         const strengthText = document.getElementById("strength_text");
 
 
-            strength.textContent = score;
+        strength.textContent = score;
 
-            if (score < 40) strengthText.textContent = "Faible";
-            else if (score < 70) strengthText.textContent = "Moyen";
-            else strengthText.textContent = "Fort";
+        if (score < 40) strengthText.textContent = "Faible";
+        else if (score < 70) strengthText.textContent = "Moyen";
+        else strengthText.textContent = "Fort";
 
+        document.getElementById("strength-container").classList.remove("hidden");
     
     savePassword(site, password, score);
 
